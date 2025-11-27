@@ -1,47 +1,284 @@
-/* 🔥 GOLD GLOW ANIMATION */
-@keyframes goldGlow {
-    0% {
-        box-shadow: 0 0 10px rgba(230,195,106,0.35),
-                    0 0 20px rgba(212,175,55,0.15);
-    }
-    50% {
-        box-shadow: 0 0 18px rgba(230,195,106,0.55),
-                    0 0 35px rgba(212,175,55,0.30);
-    }
-    100% {
-        box-shadow: 0 0 10px rgba(230,195,106,0.35),
-                    0 0 20px rgba(212,175,55,0.15);
+/* ============================================================
+   PREMIUM GOLD + GLASS HYBRID THEME — FULL UPDATED STYLES
+   ============================================================ */
+
+/* ------------ ROOT COLORS ------------ */
+:root {
+    --gold: #d4af37;
+    --gold-light: #f5e29e;
+    --glass-bg: rgba(255, 255, 255, 0.10);
+    --glass-border: rgba(255, 255, 255, 0.18);
+}
+
+/* ------------ GLOBAL RESET ------------ */
+* { box-sizing: border-box; }
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #0b0b0b, #121212);
+    color: #eae6e1;
+    margin: 0;
+    padding-top: 72px;
+}
+
+a { color: var(--gold-light); }
+a:hover { color: var(--gold); }
+
+/* ------------ NAVBAR ------------ */
+.navbar {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(212,175,55,0.08);
+}
+
+.navbar-brand, .nav-link {
+    color: var(--gold-light) !important;
+    font-weight: 600;
+}
+
+/* ------------ HERO SECTION ------------ */
+.hero {
+    padding: 120px 20px;
+    position: relative;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.7));
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(13,13,13,0.25), transparent);
+    pointer-events: none;
+}
+
+/* -------- PROFILE IMAGE FIX (cross-browser) -------- */
+.profile-img {
+    max-width: 180px;
+    max-height: 180px;
+    width: 100%;
+    height: auto;
+
+    border-radius: 50%;
+    object-fit: cover;
+
+    border: 4px solid rgba(212,175,55,0.18);
+    box-shadow: 
+        0 14px 40px rgba(0,0,0,0.6),
+        0 0 30px rgba(212,175,55,0.06);
+
+    display: inline-block;
+}
+
+@media(max-width: 768px) {
+    .profile-img {
+        max-width: 140px;
+        max-height: 140px;
     }
 }
 
-/* KPI CONTAINERS WITH GLOW */
+/* ------------ TITLES & BUTTONS ------------ */
+.title-gold {
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: 800;
+    font-size: 28px;
+}
+
+.lead-white { color: #f1e9db; }
+
+.btn-gold {
+    background: linear-gradient(135deg, var(--gold), #b8922c);
+    border: none;
+    color: #0b0b0b;
+    padding: 10px 22px;
+    border-radius: 36px;
+    font-weight: 700;
+}
+
+.btn-outline-gold {
+    background: transparent;
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    padding: 8px 20px;
+    border-radius: 36px;
+}
+
+/* ------------ SECTIONS ------------ */
+.container-pad { padding: 60px 15px; }
+
+.glass-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(16px);
+    border-radius: 14px;
+    padding: 22px;
+    margin-bottom: 20px;
+    transition: 0.25s;
+}
+.glass-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 50px rgba(212,175,55,0.06);
+}
+
+.section-title {
+    font-size: 20px;
+    color: var(--gold-light);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+    border-left: 4px solid var(--gold);
+    padding-left: 10px;
+}
+
+.skill-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--glass-border);
+    padding: 8px 12px;
+    border-radius: 10px;
+    color: var(--gold-light);
+    margin: 6px;
+    font-weight: 600;
+}
+
+/* ------------ TIMELINE ------------ */
+.timeline {
+    position: relative;
+    padding-left: 18px;
+    margin-top: 10px;
+}
+.timeline:before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--gold), rgba(212,175,55,0.6));
+    border-radius: 2px;
+}
+.timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+    padding-left: 18px;
+}
+.timeline-dot {
+    position: absolute;
+    left: -3px;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    background: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(212,175,55,0.35);
+}
+
+/* ------------ FOOTER ------------ */
+footer {
+    padding: 20px;
+    text-align: center;
+    background: transparent;
+    border-top: 1px solid rgba(212,175,55,0.04);
+    color: var(--gold-light);
+    margin-top: 30px;
+}
+
+/* ============================================================
+      🔥 ULTRA-PREMIUM KPI CIRCLES (Updated)
+   ============================================================ */
+
+/* Rotating gold halo */
+@keyframes goldRingRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Breathing glow */
+@keyframes goldBreath {
+    0% {
+        box-shadow: 0 0 12px rgba(250,215,120,0.35),
+                    0 0 22px rgba(212,175,55,0.20);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 26px rgba(250,215,120,0.55),
+                    0 0 45px rgba(212,175,55,0.35);
+        transform: scale(1.06);
+    }
+    100% {
+        box-shadow: 0 0 12px rgba(250,215,120,0.35),
+                    0 0 22px rgba(212,175,55,0.20);
+        transform: scale(1);
+    }
+}
+
+.kpi-section {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
 .kpi-circle {
-    width: 120px;
-    height: 120px;
+    position: relative;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
     margin: auto;
+
     display: flex;
     align-items: center;
     justify-content: center;
 
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 3px solid rgba(212,175,55,0.4);
+
+    animation: goldBreath 4s ease-in-out infinite;
+    overflow: hidden;
+}
+
+/* Rotating halo ring */
+.kpi-circle::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 0deg,
+        rgba(255,215,125,0.9),
+        rgba(212,175,55,0.2),
+        rgba(255,215,125,0.9)
+    );
+    animation: goldRingRotate 5s linear infinite;
+    z-index: -1;
+    filter: blur(4px);
+}
+
+/* Inner dark-glass circle */
+.kpi-circle::after {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    background: rgba(0,0,0,0.4);
+    border-radius: 50%;
     backdrop-filter: blur(8px);
-    background: rgba(255, 255, 255, 0.06);
-    border: 2px solid rgba(230,195,106,0.5);
-
-    animation: goldGlow 3s infinite ease-in-out;
-    transition: 0.3s;
 }
 
-/* Extra glow on hover */
-.kpi-circle:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 25px rgba(230,195,106,0.7),
-                0 0 45px rgba(212,175,55,0.4),
-                0 0 60px rgba(255,215,115,0.25);
-}
-
+/* KPI Text */
 .kpi-circle span {
-    font-size: 32px;
-    font-weight: 700;
+    font-size: 34px;
+    font-weight: 800;
+    color: #f7d98a;
+    text-shadow: 0 0 12px rgba(255,215,125,0.65);
+    z-index: 3;
+}
+
+.kpi-label {
+    margin-top: 10px;
+    font-size: 16px;
     color: #e6c36a;
+    font-weight: 600;
+    text-shadow: 0 0 6px rgba(255,215,125,0.4);
 }
