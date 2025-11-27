@@ -22,3 +22,37 @@ a{color:var(--gold-light)}a:hover{color:var(--gold)}
 .timeline-dot{position:absolute;left:-3px;top:4px;width:12px;height:12px;background:var(--gold);border-radius:50%;box-shadow:0 0 8px rgba(212,175,55,0.35)}
 footer{padding:20px;text-align:center;background:transparent;border-top:1px solid rgba(212,175,55,0.04);color:var(--gold-light);margin-top:30px}
 @media(max-width:768px){.profile-img{width:140px;height:140px}.hero{padding:80px 10px}body{padding-top:64px}}
+/* KPI CIRCLES */
+.kpi-section {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.kpi-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.06);
+    border: 2px solid rgba(230,195,106,0.5);
+    box-shadow: 0 0 12px rgba(230,195,106,0.25);
+}
+
+.kpi-circle span {
+    font-size: 32px;
+    font-weight: 700;
+    color: #e6c36a;
+}
+
+.kpi-label {
+    margin-top: 10px;
+    font-size: 15px;
+    color: #e6c36a;
+    font-weight: 500;
+}
+
